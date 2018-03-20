@@ -1,0 +1,113 @@
+@fs: 75rem;
+@green: #22ac38;
+.custom-wrapper {
+    min-height: 100%;
+}
+.head-wrapper {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.search-warpper {
+    width: 100%;
+    background-color: #fff;
+    padding: 15/@fs 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    .search-content {
+        width: 90%;
+        height: 60/@fs;
+        line-height: 60/@fs;
+        margin: 0 auto;
+        background-color: #eee;
+        display: flex;
+        justify-content: flex-start;
+        overflow: hidden;
+        .iconfont {
+            font-size: 32/@fs;
+            padding-left: 20/@fs;
+        }
+        form {
+            width: 100%;
+        }
+        .input-box {
+            border: none;
+            width: 80%;
+            background-color: transparent;
+            outline: none;
+            padding-left: 30/@fs;
+            color: #999999;    
+        }
+    }
+}
+
+.nav-wrapper {
+    display: flex;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    .nav-item {
+        flex: 0 0 50%;
+        text-align: center;
+        line-height: 80/@fs;
+        a {
+            color: #333;
+            &.selected {
+                color: @green;
+            }
+        }
+        &:first-child {
+            position: relative;
+            &::after {
+                content: "";
+                width: 1px;
+                height: 60/@fs;
+                background-color: #eee;
+                position: absolute;
+                top: 10/@fs;
+                right: 0;
+                font-size: 26/@fs;
+            }    
+        }
+    }
+}
+.near-wrapper {
+    margin-top: 170/@fs;
+    background-color: #fff;
+    .shop-item {
+        box-sizing: border-box;
+        padding: 10/@fs 30/@fs;
+        border-bottom: 1px solid #eee;
+        &:last-child {
+            border-bottom: none;
+        }
+        .top {
+            display: flex;
+            justify-content: space-between;
+            line-height: 2;
+            .shop-name {
+                color: #333;
+                font-size: 26/@fs;
+            }
+            .distance {
+                font-size: 24/@fs;
+            }
+        }
+        .address {
+            line-height: 1.8;
+            font-size: 24/@fs;
+        }
+    }
+}
+.recently-wrapper {
+    .near-wrapper;
+}
+.no-data {
+    margin-top: 200/@fs;
+    font-size: 30/@fs;
+    text-align: center;
+    
+}
+
+
+

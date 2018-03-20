@@ -1,0 +1,71 @@
+@main-color:#22ac38;
+@strong-color:#7c7c7c;
+@default-color:#969696;
+@defaut-bg-color:#ebebeb;
+@border-color:#ececec;
+@white:#fff;
+@white-hover:#f2f2f2;
+@choose-color:#f6f6f6;
+
+
+.font-dpr(@font-size) {
+    [data-dpr="1"] & {
+        font-size: @font-size * .5;
+    }
+    [data-dpr="2"] & {
+        font-size: @font-size * 1;
+    }
+    [data-dpr="3"] & {
+        font-size: @font-size * 1.5;
+    }
+}
+
+.heightall(@value) {
+    height: @value;
+    line-height: @value;
+}
+
+.nav-tab {
+    display: flex;
+    justify-content: center;
+    .item {
+        flex: 1;
+    }
+}
+
+.text-overflow {
+    word-break: keep-all;
+    /* 不换行 */
+    white-space: nowrap;
+    /* 不换行 */
+    overflow: hidden;
+    /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis;
+}
+
+
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.wx-title {
+    color: @strong-color;
+    line-height: 1rem;
+    padding-left: 0.3125rem;
+}
+
+.y-hidden {
+    overflow-y: hidden;
+}

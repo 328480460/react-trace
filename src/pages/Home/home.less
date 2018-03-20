@@ -1,0 +1,52 @@
+@import '../../less/mixin.less';
+@fs: 75rem;
+
+.currentLocation {
+    background-color: #fff;
+    text-align: center;
+    font-size: 28/@fs;
+    .heightall(100/@fs);
+    border: 1px solid @border-color;
+    span {
+        padding-right: 10/@fs;
+    }
+    .icon {
+        font-size: 28/@fs;
+    }
+    a {
+        color: @main-color; 
+    }
+}
+
+.code {
+    padding:  40/@fs 0;
+    background-color: #fff;
+    .logo {
+        display: block;
+        width: 190/@fs;
+        margin: 0 auto;
+    }
+}
+
+.scan-wrapper {
+    text-align: center;
+    margin-top: 100/@fs;
+    .titles {
+        display: inline-block;
+        padding: 10/@fs 30/@fs;
+        background-color: #fff;
+        border-radius: 30/@fs;
+    }
+    .saoyisao {
+        color: @main-color;
+        font-size: 32/@fs;
+        margin: 20/@fs 0;
+    }
+    .code-wrapper {
+        width: 182/@fs;
+        margin: 0 auto;
+        .scan-img {
+            width: 100%;
+        }
+    }
+}
