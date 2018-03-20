@@ -4,7 +4,7 @@ const basePath = 'http://www.bjfxr.com/analyse/';
 
 
 // 定位当前位置接口，返回附近的市场
-export let getDisSupplier = function(lat, lon,page = 1, node_name) {
+export let getDisSupplier = function(lon, lat,page = 1, node_name) {
   let url = basePath + "tracingchain/nodeDistance"
   let data = { x_coordinate: lat, y_coordinate: lon, node_name: node_name, page: page};
   

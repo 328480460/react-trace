@@ -63,7 +63,7 @@ class App extends Component {
     //     })
     // })
 
-    getDisSupplier("39.95933", "116.29845", 1).then(res => {
+    getDisSupplier("39.95933", "116.29845", '').then(res => {
         this.setState({
             nearShopList: res.data[0].data,
             currentLocation: res.data[0].data[0]

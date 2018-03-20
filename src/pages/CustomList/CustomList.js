@@ -78,6 +78,7 @@ class CustomList extends Component {
         this.recentlyShopClick = this.recentlyShopClick.bind(this);
         this.state = {
             keyword: '',
+            searchKeyword: '',
             nearShopList: this.props.nearShopList,
             recentlyShopList: localStorage.getItem('recentlySelect') ? JSON.parse(localStorage.getItem('recentlySelect')): '',
             currentSelect: ''
@@ -101,9 +102,16 @@ class CustomList extends Component {
     }
 
     handleSubmit() {
-        getDisSupplier("39.95933", "116.29845", 1, this.state.keyword).then(res => {
-            this.setState({
-                nearShopList: res.data[0].data
+        this.setState((prevState, props) => {
+            return {
+                searchKeyword: prevState.keyword
+            }
+        }, () => {
+
+            getDisSupplier("39.95933", "116.29845", 1, this.state.searchKeyword).then(res => {
+                this.setState({
+                    nearShopList: res.data[0].data
+                })
             })
         })
     }
@@ -156,7 +164,7 @@ class CustomList extends Component {
                     <Nav/>
                 </div>
                 <Switch>
-                    <Route path='/customList/near' component={() => (<NearShopList keyword={this.state.keyword} shopList={this.state.nearShopList} nearShopClick={this.nearShopClick}/>)} />
+                    <Route path='/customList/near' component={() => (<NearShopList keyword={this.state.searchKeyword} shopList={this.state.nearShopList} nearShopClick={this.nearShopClick}/>)} />
                     <Route path='/customList/recently' component={() => (<RecentlySelect shopList={this.state.recentlyShopList} recentlyShopClick={this.recentlyShopClick}/>)}/>
                     <Redirect from='/customList' to='/customList/near'/>
                 </Switch>
